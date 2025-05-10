@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday, My Love ❤️</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Playfair Display', serif;
+    }
+
+    body {
+      background: linear-gradient(to bottom, #B0C4DE, #ffffff);
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .header {
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+    }
+
+    .header h1 {
+      font-size: 3.5rem;
+      color: #2c3e50;
+      margin-bottom: 1rem;
+    }
+
+    .quotes-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 2rem;
+      gap: 2rem;
+    }
+
+    .quote-card {
+      background: transparent;
+      padding: 0;
+      width: 350px;
+      text-align: center;
+      position: relative;
+    }
+
+    .quote-card img {
+      width: 100%;
+      border-radius: 15px;
+    }
+
+    
+    .music-container {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .song-list {
+      list-style: none;
+      padding: 1rem;
+    }
+
+    .song-list li {
+      margin: 1rem 0;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+    }
+
+    .snowflake {
+      position: fixed;
+      z-index: 1000;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(100vh) rotate(360deg);
+      }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Snowflakes Container -->
+  <div id="snowflakes"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <h1>
+      Happy Birthday, Sleepy Head 
+      <img src="snowflake.png" alt="Snowflake" style="height: 150px; vertical-align: middle;" />
+      <img src="white tulips.png" alt="White Tulips" style="height: 100px; vertical-align: middle;" />
+    </h1>
+    <p>A journey through our special moments...</p>
+  </header>
+
+  <!-- Quotes Section -->
+  <section class="quotes-container">
+    <div class="quote-card">
+      <img src="letter.png" alt="Letter to Rania" />
+      <img src="white tulips.png" alt="White Tulips" class="tulip-decoration" />
+    </div>
+  </section>
+
+  <!-- Music Section -->
+  <section class="music-container">
+    <h2>Your Favorite Songs</h2>
+    <ul class="song-list">
+      <li>Song Title 1 🎵</li>
+      <li>Song Title 2 🎵</li>
+    </ul>
+  </section>
+
+  <script>
+    // Snowflake Animation
+    function createSnowflake() {
+      const snowflake = document.createElement('img');
+      snowflake.src = 'snowflake.png';
+      snowflake.classList.add('snowflake');
+
+      const startPosition = Math.random() * window.innerWidth;
+      const duration = Math.random() * 3 + 2;
+      const size = Math.random() * 20 + 20;
+
+      snowflake.style.left = startPosition + 'px';
+      snowflake.style.width = size + 'px';
+      snowflake.style.animation = `fall ${duration}s linear infinite`;
+
+      document.getElementById('snowflakes').appendChild(snowflake);
+
+      setTimeout(() => {
+        snowflake.remove();
+      }, duration * 1000);
+    }
+
+    setInterval(createSnowflake, 300);
+
+    // Floating Hearts
+    document.addEventListener('mousemove', (e) => {
+      const heart = document.createElement('div');
+      heart.innerHTML = '❤️';
+      heart.style.position = 'fixed';
+      heart.style.left = e.clientX + 'px';
+      heart.style.top = e.clientY + 'px';
+      heart.style.fontSize = '20px';
+      heart.style.animation = 'float 2s ease-out';
+      document.body.appendChild(heart);
+
+      setTimeout(() => heart.remove(), 2000);
+    });
+  </script>
+</body>
+</html>
