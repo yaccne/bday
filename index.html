@@ -189,6 +189,55 @@
    background-color: #c9302c; /* Darker red on hover */
   }
 
+  @media (max-width: 768px) {
+  .quotes-container {
+   flex-direction: column; /* Stack quote cards on smaller screens */
+   align-items: center; /* Center them horizontally */
+  }
+
+  .quote-card {
+   width: 90%; /* Make quote cards take up more width on smaller screens */
+   margin-bottom: 2rem; /* Add some space between stacked cards */
+  }
+
+  #letter-popup {
+   width: 90%; /* Make the pop-up take up more width */
+   max-width: 400px; /* Set a maximum width to prevent it from being too wide */
+   top: 10%; /* Adjust vertical positioning */
+   left: 5%;
+   transform: translateX(0); /* Remove horizontal centering */
+   margin: 0 auto; /* Center horizontally within its container */
+   overflow-y: auto; /* Ensure scrollability if the content is long */
+   max-height: 80vh; /* Limit the maximum height */
+  }
+
+  #letter-popup button {
+   font-size: 0.9rem; /* Slightly smaller button text */
+   padding: 8px 15px; /* Adjust button padding */
+  }
+
+  .shared-quotes-container img {
+   width: 200px; /* Adjust book image size on smaller screens */
+   height: 200px;
+  }
+
+  #shared-quotes-popup {
+   width: 90%;
+   max-width: 400px;
+   top: 10%;
+   left: 5%;
+   transform: translateX(0);
+   margin: 0 auto;
+   max-height: 80vh;
+   overflow-y: auto;
+  }
+
+  #shared-quotes-popup button {
+   font-size: 0.9rem;
+   padding: 8px 15px;
+  }
+ }
+
 
   </style>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
