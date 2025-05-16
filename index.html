@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Happy Birthday, My Love ❤️</title>
+  <title>Happy Birthday</title>
   <style>
     * {
       margin: 0;
@@ -32,6 +32,7 @@
     }
 
     .quotes-container {
+      color: #2c3e50;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -87,6 +88,107 @@
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-20px); }
     }
+    h2{
+      color: #2c3e50;
+
+    }
+
+    #letter-popup {
+   display: none;
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   background: #f8f8f8; /* Light gray background */
+   padding: 30px; /* Increased padding */
+   border-radius: 15px; /* More rounded corners */
+   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
+   z-index: 1001;
+   text-align: center; /* Center the content inside */
+   font-size: 1.1rem; /* Slightly larger font size */
+  }
+
+  #letter-popup h2 {
+   color: #2c3e50; /* Darker heading color */
+   margin-bottom: 15px;
+  }
+
+  #letter-popup p {
+   color: #555; /* Slightly lighter paragraph color */
+   line-height: 1.6; /* Improved readability */
+   margin-bottom: 10px;
+  }
+
+  #letter-popup button {
+   background-color: #5cb85c; /* Green button background */
+   color: white;
+   border: none;
+   padding: 10px 20px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 1rem;
+   border-radius: 8px;
+   cursor: pointer;
+   transition: background-color 0.3s ease; /* Smooth hover effect */
+  }
+
+  #letter-popup button:hover {
+   background-color: #4cae4c; /* Darker green on hover */
+  }
+
+
+  .shared-quotes-container h2 {
+   color: #2c3e50;
+   margin-bottom: 0.5rem;
+  }
+
+  #shared-quotes-popup h3 {
+   color: #2c3e50;
+   margin-bottom: 1rem;
+  }
+
+  #shared-quotes-popup li {
+   margin-bottom: 1rem;
+   padding-bottom: 0.5rem;
+   border-bottom: 1px solid #eee;
+  }
+
+  #shared-quotes-popup li:last-child {
+   border-bottom: none;
+  }
+
+  #shared-quotes-popup .quote {
+   font-style: italic;
+   color: #555;
+  }
+
+  #shared-quotes-popup .date {
+   font-size: 0.9rem;
+   color: #777;
+   margin-top: 0.2rem;
+  }
+
+  /* Style for the close button in the shared quotes popup (you can adjust this) */
+  #shared-quotes-popup button {
+   background-color: #d9534f; /* Reddish close button */
+   color: white;
+   border: none;
+   padding: 8px 15px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 0.9rem;
+   border-radius: 5px;
+   cursor: pointer;
+   margin-bottom: 10px;
+   transition: background-color 0.3s ease;
+  }
+
+  #shared-quotes-popup button:hover {
+   background-color: #c9302c; /* Darker red on hover */
+  }
+
 
   </style>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
@@ -102,25 +204,62 @@
       <img src="snowflake.png" alt="Snowflake" style="height: 150px; vertical-align: middle;" />
       <img src="white tulips.png" alt="White Tulips" style="height: 100px; vertical-align: middle;" />
     </h1>
-    <p>A journey through our special moments...</p>
+    <h2>A journey through our special moments...</h2>
   </header>
 
   <!-- Quotes Section -->
+   
   <section class="quotes-container">
+    
     <div class="quote-card">
-      <img src="letter.png" alt="Letter to Rania" />
-      <img src="white tulips.png" alt="White Tulips" class="tulip-decoration" />
+    <img src="letter.png" alt="Letter to Rania" onclick="showLetter()" style="cursor: pointer;"/>
+    
+
+  <div id="letter-popup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); z-index: 1001;">
+     <button onclick="closeLetter()">Close</button>
+     <h2>Dearest,</h2>
+     <p>I’ve been sitting here thinking about how lucky I am to have you in my life, and I just couldn’t let another moment pass without telling you exactly how much you mean to me.
+
+First, I want you to know how deeply grateful I am for you. You have this incredible way of filling my days with light, even when things feel heavy. I don’t say it enough, but I truly appreciate every little thing you do—the way you listen, the way you care, the way you see me. You’re my safe place, and I’m so thankful for that.
+
+I adore our talks. Whether we’re diving into big dreams or laughing over the silliest things, every conversation with you feels like coming home. Your mind amazes me—the way you think, the way you question, the way you turn even ordinary moments into something meaningful. I could listen to you forever.
+
+And when you tell me about the books you’re reading? Oh, my heart. There’s something so magical about watching your eyes light up as you share stories within stories. It’s not just the plots or the characters—it’s the way you weave your thoughts and feelings into them. You make me fall in love with stories all over again, just by being you.
+
+Then there’s our singing—those spontaneous, off-key duets that turn into full-blown concerts. I live for those moments. It’s not just the music (though we’re basically a legendary duo, let’s be honest). It’s the joy of being silly together, of harmonizing in every sense of the word. You make my soul feel like it’s dancing.
+
+But nothing compares to the way we click. You know—when we finish each other’s sentences or share a glance that says a thousand words without speaking. It’s like we’re two halves of the same weird, wonderful puzzle. With you, I never feel alone. I just feel… understood.
+
+So here’s my promise to you: I’ll never stop cherishing these moments, big or small. I’ll never stop choosing you, loving you, and being grateful for you. You’re my person, [Her Name], in every way that matters.
+
+Thank you for being you. Thank you for being mine.
+
+With all my heart,</p>
+     <p>yours sincerly,</p>
+     <p></p>
+
+  <!-- shared quotes section -->
+  </div>
+    <section class="shared-quotes-container" style="padding: 2rem; text-align: center;">
+  <h2>Our Shared Quotes</h2>
+  <img src="book2.png" alt="Our Shared Quotes" onclick="showSharedQuotes()" style="width: 300px; height: 300px; cursor: pointer; margin-top: 1rem;">
+ </section>
+
+ <div id="shared-quotes-popup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #f8f8f8; padding: 30px; border-radius: 15px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); z-index: 1002; text-align: left; max-height: 80vh; overflow-y: auto;">
+  <button onclick="closeSharedQuotes()" style="background-color: #d9534f; color: white; border: none; padding: 8px 15px; text-align: center; text-decoration: none; display: inline-block; font-size: 0.9rem; border-radius: 5px; cursor: pointer; margin-bottom: 10px;">Close</button>
+  <h3>Our Special Quotes</h3>
+  <ul id="shared-quotes-list" style="list-style: none; padding-left: 0;">
+   </ul>
+ </div>
+
+  <h2>these flowers are for you</h2><br><br>
+    <img src="white tulips.png" alt="White Tulips" class="tulip-decoration" />
     </div>
   </section>
 
+
   <!-- Music Section -->
-  <section class="music-container">
-    <h2>Your Favorite Songs</h2>
-    <ul class="song-list">
-      <li>Song Title 1 🎵</li>
-      <li>Song Title 2 🎵</li>
-    </ul>
-  </section>
+ 
 
   <script>
     // Snowflake Animation
@@ -146,19 +285,42 @@
 
     setInterval(createSnowflake, 300);
 
-    // Floating Hearts
-    document.addEventListener('mousemove', (e) => {
-      const heart = document.createElement('div');
-      heart.innerHTML = '❤️';
-      heart.style.position = 'fixed';
-      heart.style.left = e.clientX + 'px';
-      heart.style.top = e.clientY + 'px';
-      heart.style.fontSize = '20px';
-      heart.style.animation = 'float 2s ease-out';
-      document.body.appendChild(heart);
+    function showLetter() {
+      document.getElementById('letter-popup').style.display = 'block';
+    }function closeLetter() {
+     document.getElementById('letter-popup').style.display = 'none';
+    }
 
-      setTimeout(() => heart.remove(), 2000);
-    });
+    const sharedQuotes = [
+   { quote: "The best is yet to come.", date: "October 26, 2024" },
+   { quote: "Every moment with you is a treasure.", date: "December 15, 2024" },
+   { quote: "Our love story is my favorite.", date: "February 14, 2025" },
+   // Add more of your shared quotes and dates here
+  ];
+
+  function showSharedQuotes() {
+   const sharedQuotesPopup = document.getElementById('shared-quotes-popup');
+   const sharedQuotesList = document.getElementById('shared-quotes-list');
+
+   // Clear any previous quotes
+   sharedQuotesList.innerHTML = '';
+
+   // Populate the list with quotes and dates
+   sharedQuotes.forEach(item => {
+    const listItem = document.createElement('li');
+    listItem.innerHTML = `<p class="quote">"${item.quote}"</p><p class="date">- ${item.date}</p>`;
+    sharedQuotesList.appendChild(listItem);
+   });
+
+   sharedQuotesPopup.style.display = 'block';
+  }
+
+  function closeSharedQuotes() {
+   document.getElementById('shared-quotes-popup').style.display = 'none';
+  }
+
+    
+    
   </script>
 </body>
 </html>
