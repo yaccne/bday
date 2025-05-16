@@ -106,8 +106,6 @@
    z-index: 1001;
    text-align: center; /* Center the content inside */
    font-size: 1.1rem; /* Slightly larger font size */
-   overflow-y: auto;
-   max-height: 80vh;   
   }
 
   #letter-popup h2 {
@@ -155,6 +153,34 @@
    padding-bottom: 0.5rem;
    border-bottom: 1px solid #eee;
   }
+  .tooltip-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .tooltip-message {
+      visibility: hidden;
+      background-color: #fff;
+      color: #333;
+      font-size: 20px;
+      padding: 10px 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      position: absolute;
+      z-index: 1;
+      top: 110%;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .tooltip-container:hover .tooltip-message {
+      visibility: visible;
+      opacity: 1;
+    }
 
   #shared-quotes-popup li:last-child {
    border-bottom: none;
@@ -248,6 +274,7 @@
    padding: 8px 15px;
   }
  }
+ 
 
 
   </style>
@@ -258,13 +285,19 @@
   <div id="snowflakes"></div>
 
   <!-- Header -->
-  <header class="header">
+ <header class="header">
     <h1>
-      Happy Birthday, Sleepy Head 
-      <img src="snowflake.png" alt="Snowflake" style="height: 150px; vertical-align: middle;" />
-      <img src="white tulips.png" alt="White Tulips" style="height: 100px; vertical-align: middle;" />
+      Happy Birthday, Sleepy Head
+      <span class="tooltip-container">
+        <img src="snowflake.png" alt="Snowflake" style="height: 150px; vertical-align: middle;" />
+        <div class="tooltip-message">"They say no two snowflakes are alike,<br>
+        Nature's reminder that<br>
+        something as beautiful as you<br>
+        could never be repeated." ❄️</div>
+      </span>
+      <img src="book.png" alt="White Tulips" style="height: 100px; vertical-align: middle;" />
     </h1>
-    <h2>A journey through our special moments...</h2>
+    <h2>This is for you.....</h2>
   </header>
 
   <!-- Quotes Section -->
@@ -278,23 +311,17 @@
   <div id="letter-popup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); z-index: 1001;">
      <button onclick="closeLetter()">Close</button>
      <h2>Dearest,</h2>
-     <p>I’ve been sitting here thinking about how lucky I am to have you in my life, and I just couldn’t let another moment pass without telling you exactly how much you mean to me.
+     <p>I’ve been sitting here thinking about how lucky I am to have you in my life, and I just couldn’t let another moment pass without telling you exactly how much you mean to me. First, I want you to know how deeply grateful I am for you, for your laughter, your mind, and the way you make ordinary moments feel extraordinary.
 
-First, I want you to know how deeply grateful I am for you. You have this incredible way of filling my days with light, even when things feel heavy. I don’t say it enough, but I truly appreciate every little thing you do—the way you listen, the way you care, the way you see me. You’re my safe place, and I’m so thankful for that.
+Six months with you has felt like a melody I never want to end. I love it when we sing together, chasing the rhythm of songs, even though you’re always the one who finds it first. I love it when you forget something, and I get to playfully tease you until it comes back to you. Those little moments, the way your eyes light up when you remember, are tiny treasures to me.
 
-I adore our talks. Whether we’re diving into big dreams or laughing over the silliest things, every conversation with you feels like coming home. Your mind amazes me—the way you think, the way you question, the way you turn even ordinary moments into something meaningful. I could listen to you forever.
+I admire how passionately you talk about your books, how your voice dances with excitement over stories and ideas. You have this way of making even the simplest things feel magical, and I’ll never tire of listening to you.
 
-And when you tell me about the books you’re reading? Oh, my heart. There’s something so magical about watching your eyes light up as you share stories within stories. It’s not just the plots or the characters—it’s the way you weave your thoughts and feelings into them. You make me fall in love with stories all over again, just by being you.
+But what truly leaves me in awe is US, how effortlessly we intertwine. The way we say the same things, do the same things, think the same thoughts, as if our minds are whispering secrets to each other without words. You don’t just complete my sentences, you make them brighter, fuller, more alive.
 
-Then there’s our singing—those spontaneous, off-key duets that turn into full-blown concerts. I live for those moments. It’s not just the music (though we’re basically a legendary duo, let’s be honest). It’s the joy of being silly together, of harmonizing in every sense of the word. You make my soul feel like it’s dancing.
+And your heart, it feels everything so deeply, even the smallest moments. That’s one of the things I cherish most about you. I want you to feel that depth of happiness, too, because you deserve to be celebrated, every single day.
 
-But nothing compares to the way we click. You know—when we finish each other’s sentences or share a glance that says a thousand words without speaking. It’s like we’re two halves of the same weird, wonderful puzzle. With you, I never feel alone. I just feel… understood.
-
-So here’s my promise to you: I’ll never stop cherishing these moments, big or small. I’ll never stop choosing you, loving you, and being grateful for you. You’re my person, [Her Name], in every way that matters.
-
-Thank you for being you. Thank you for being mine.
-
-With all my heart,</p>
+Thank you for being you. For being my harmony, my favorite conversation, my unexpected perfect match.</p>
      <p>yours sincerly,</p>
      <p></p>
 
@@ -352,9 +379,27 @@ With all my heart,</p>
     }
 
     const sharedQuotes = [
-   { quote: "The best is yet to come.", date: "October 26, 2024" },
-   { quote: "Every moment with you is a treasure.", date: "December 15, 2024" },
-   { quote: "Our love story is my favorite.", date: "February 14, 2025" },
+   { quote: "Sometimes an understanding silence was better than a bunch of meaningless words", date: "Dec 15, 2024" },
+   { quote: "if there's no shoulder to cry on, there's definitely a floor to kneel an pray", date: "Dec 20, 2024" },
+   { quote: "\I love the way you link life to lyrics", date: "5 Jan 2025" },
+   {quote: "\J’aimerais te dire qu’aimer c’est une évidence, un feu doux qui ne brûle jamais, un refuge où l’âme repose sans peine. J’aimerais te promettre que l’amour ne blesse pas, qu’il est toujours juste, qu’il ne s’égare jamais. Mais aimer, c’est parfois un combat silencieux, un éclat de lumière dans un monde d’ombres, un fil fragile qui tremble sous le poids de nos imperfections.\n\nAimer, c’est vouloir donner le meilleur et offrir parfois ce qu’on a de pire. C’est tendre la main sans vouloir causer de fissures, c’est marcher sur un fil entre tendresse et maladresse en espérant ne pas tomber. Aimer, c’est apprendre à porter les failles de l’autre sans s’effondrer, c’est se regarder dans le miroir et affronter les monstres que l’amour fait surgir en nous.", date: "Jan 16, 2025"},
+   { quote: "All those moments throughout the days, weeks, months that don't get marked on calendars with hand-drawn stars or little stickers, those are the moments that make life", date: "Jan 28, 2025" },
+   { quote: "For someone who loved words as much as I did, it was amazing how often they failed me", date: "Feb 8, 2025" },
+   { quote: "Y a trois choses dans la vie qu'on doit pas briser : les promesses, la confiance, un cœur", date: "Feb 8, 2025" },
+   { quote: "Thank you for making me feel comfortable being exactly who I am", date: "Feb 15, 2025" },
+   { quote: "Tu mérites quelqu'un qui te soutient quand tu en as besoin, qui t'apaise, qui te rassure, quelqu'un qui calme ton système nerveux, ton cœur, ton esprit", date: "Feb 21, 2025" },
+   { quote: "Making someone feel seen, heard and understood is the loudest way to love them", date: "Feb 22, 2025" },
+   { quote: "Are we gonna make it, is this gonna hurt? I try to imagine a world where we don't collide, it's making me sick but we'll heal and the stars will rise", date: "Mar 7, 2025" },
+   { quote: "Imagine si tu oses, et que tout se passe bien", date: "Mar 8, 2025" },
+   { quote: "Se regarder dans les yeux, ne rien dire. Et sourire d'être heureux sans raison, simplement parce qu'il n'y a rien à expliquer, à justifier ou à comprendre. Seulement être, ensemble, dans une évidence silencieuse. D'un sourire être plus bavard que les mots. Ne rien dire, mais tout entendre. Partager un sentiment sincère qui ne cherche rien, ne demande rien, qui se suffit à lui-même. C'est le bonheur ! Rien d'autre. Sans la crainte du passé ou de l'avenir. Puis, sentir ce lien invisible dont on parle dans les livres. Et être traversé par cette conviction que l'instant qui passe est unique, et qu'on ne l'oubliera jamais. Bref, être avec toi.", date: "Mar 9, 2025" },
+   { quote: "You live most of your life inside your head. Make sure it's a nice place to be", date: "Mar 22, 2025" },
+   { quote: "I hope there are days where your coffee tastes like magic, your playlist makes you dance, a stranger makes you smile, and the night sky touches your soul. I hope you fall in love with being alive again", date: "Mar 28, 2025" },
+   { quote: "Dis-moi il est où le bonheur, dix ans plus tard et autant d'erreurs, toujours ce parfum, cette odeur, je veux nous revoir ici ou ailleurs", date: "Mar 28, 2025" },
+   { quote: "Read to me. / Why? / Because you go somewhere else when you read, I want to go there with you", date: "Mar 29, 2025" },
+   { quote: "Make your heart warm no matter how cold they have been to you", date: "Apr 12, 2025" },
+   { quote: "Don't compare her to sunshine and roses when she's orchids and moonlight", date: "Apr 24, 2025" },
+   { quote: "I think one of my favorite feelings is laughing with you and realizing halfway through how much I enjoy you and your existence", date: "2025" },
+   
    // Add more of your shared quotes and dates here
   ];
 
